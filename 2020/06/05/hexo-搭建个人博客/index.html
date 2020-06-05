@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://laiyong.wang">
-  <title>Archives: 2020 | 王来勇的博客</title>
+  <title>hexo 搭建个人博客 | 王来勇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="94年单身狗一条">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王来勇的博客">
-<meta property="og:url" content="http://laiyong.wang/archives/2020/index.html">
+  <meta name="description" content="1. 环境搭建1.1 安装 gityum install -y git安装好后，用 git --version 来查看一下版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 搭建个人博客">
+<meta property="og:url" content="http://laiyong.wang/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="王来勇的博客">
-<meta property="og:description" content="94年单身狗一条">
+<meta property="og:description" content="1. 环境搭建1.1 安装 gityum install -y git安装好后，用 git --version 来查看一下版本">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-05T01:56:00.000Z">
+<meta property="article:modified_time" content="2020-06-05T04:14:12.094Z">
 <meta property="article:author" content="王来勇">
+<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="王来勇的博客" type="application/atom+xml">
@@ -148,36 +152,109 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo-搭建个人博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-06-05T01:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo 搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      hexo 搭建个人博客
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-06-05T01:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h3><h4 id="1-1-安装-git"><a href="#1-1-安装-git" class="headerlink" title="1.1 安装 git"></a>1.1 安装 git</h4><pre><code>yum install -y git</code></pre><p>安装好后，用 <code>git --version</code> 来查看一下版本</p>
+<a id="more"></a>
+<h4 id="1-2-安装-node-js"><a href="#1-2-安装-node-js" class="headerlink" title="1.2 安装 node.js"></a>1.2 安装 node.js</h4><p>Hexo是基于 nodeJS 编写的，所以需要安装一下 nodeJs 和里面的 npm 工具</p>
+<pre><code>cd ~ &amp;&amp; \
+wget https://nodejs.org/dist/v8.15.1/node-v8.15.1-linux-x64.tar.gz &amp;&amp; \
+mkdir -p /usr/local/lib/nodejs &amp;&amp; \
+tar xf node-v8.15.1-linux-x64.tar.gz -C /usr/local/lib/nodejs &amp;&amp; \
+echo &apos;export PATH=/usr/local/lib/nodejs/node-v8.15.1-linux-x64/bin:$PATH&apos; &gt;&gt; ~/.bashrc &amp;&amp; \
+source ~/.bashrc
+
+yum install -y npm </code></pre><p>安装完后，打开命令行,检查一下有没有安装成功</p>
+<pre><code>node -v
+npm -v</code></pre><h4 id="1-2-安装-hexo"><a href="#1-2-安装-hexo" class="headerlink" title="1.2 安装 hexo"></a>1.2 安装 hexo</h4><p>git 和 nodejs 安装好后，就可以安装 hexo 了，你可以先创建一个文件夹blog，然后cd到这个文件夹下</p>
+<pre><code>npm install -g hexo-cli</code></pre><p>用 <code>hexo -v</code>查看一下版本<br>至此全部安装完成，接下来初始化一下hexo</p>
+<pre><code>hexo init myblog</code></pre><p>这个 mybolg 取什么名字都可以，然后</p>
+<pre><code>cd myblog //进入这个myblog文件夹</code></pre><p>该目录下的文件如下：</p>
+<ul>
+<li>node_modules: 依赖包</li>
+<li>public：存放生成的页面</li>
+<li>scaffolds：生成文章的一些模板</li>
+<li>source：用来存放你的文章</li>
+<li>themes：主题</li>
+<li>_config.yml: 博客的配置文件</li>
+</ul>
+<pre><code>hexo g
+hexo server</code></pre><p>打开 hexo 的服务，在浏览器输入 localhost:4000 就可以看到你生成的博客了。<br>生成博客是默认的，比较难看，接下来的教程是选择博客主题、发布至网络上等操作</p>
+<h3 id="2-博客优化"><a href="#2-博客优化" class="headerlink" title="2. 博客优化"></a>2. 博客优化</h3><h4 id="2-1-主题更换"><a href="#2-1-主题更换" class="headerlink" title="2.1 主题更换"></a>2.1 主题更换</h4><p>更换主题流程：下载主题 -&gt; 配置主题，以 xoxo 为例。主题到 <a href="https://hexo.io/themes" target="_blank" rel="noopener">https://hexo.io/themes</a> 去找</p>
+<pre><code># 下载到themes文件夹下
+git clone https://github.com/KevinOfNeu/hexo-theme-xoxo xoxo
+
+# 修改 _config.yml 配置
+theme: xoxo</code></pre><h4 id="2-2-创建文章"><a href="#2-2-创建文章" class="headerlink" title="2.2 创建文章"></a>2.2 创建文章</h4><pre><code>// [layout] 为布局，可选项为 `post`、`page`、`draft`，这将决定文章所在文件路径。
+// &lt;title&gt; 为文章标题
+// 如 hexo new post 我是大帅逼！
+hexo new [layout] &lt;title&gt;</code></pre><h4 id="2、3-安装后台"><a href="#2、3-安装后台" class="headerlink" title="2、3 安装后台"></a>2、3 安装后台</h4><p>为方便管理，脱离命令行，进行界面化操作，安装后台<br>首先进入hexo创建的博客项目的根目录下，执行</p>
+<pre><code>npm install --save hexo-admin</code></pre><p>运行下列命令启动hexo-admin</p>
+<pre><code>hexo server -d</code></pre><p>打开 <a href="http://localhost:4000/admin" target="_blank" rel="noopener">http://localhost:4000/admin</a> 就可以访问到hexo-admin管理页面了<br><strong>密码保护</strong>：打开 setting ，点击 Setup authentification here 输入用户名，密码，密钥，下面会自动生成配置文件，复制加在 hexo 根目录下的 _config.yml 中</p>
+<h3 id="3-博客上线"><a href="#3-博客上线" class="headerlink" title="3. 博客上线"></a>3. 博客上线</h3><h4 id="3-1-GitHub创建个人仓库"><a href="#3-1-GitHub创建个人仓库" class="headerlink" title="3.1 GitHub创建个人仓库"></a>3.1 GitHub创建个人仓库</h4><p><a href="https://github.com" target="_blank" rel="noopener">github</a> 新建一个仓库，仓库名必须为 <code>&lt;user-name&gt;</code>.github.io 格式，其中 <code>&lt;user-name&gt;</code> 是你 github 的昵称</p>
+<h4 id="3-2-生成SSH添加到GitHub"><a href="#3-2-生成SSH添加到GitHub" class="headerlink" title="3.2 生成SSH添加到GitHub"></a>3.2 生成SSH添加到GitHub</h4><pre><code>git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;</code></pre><p>检查一下你有没有输对</p>
+<pre><code>git config user.name
+git config user.email</code></pre><p>然后创建SSH,一路回车</p>
+<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></pre><p>ssh ，简单来讲，就是一个秘钥，其中，id_rsa 是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub 是公共秘钥，可以随便给别人看。把这个公钥放在 GitHub 上，这样当你链接 GitHub 自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过 git 上传你的文件到 GitHub 上。</p>
+<p>而后在 GitHub 的 setting 中，找到 SSH keys 的设置选项，点击 New SSH key<br>把你的 id_rsa.pub 里面的信息复制进去。</p>
+<p>查看是否成功</p>
+<pre><code>ssh -T git@github.com</code></pre><h4 id="3-3-将hexo部署到GitHub"><a href="#3-3-将hexo部署到GitHub" class="headerlink" title="3.3 将hexo部署到GitHub"></a>3.3 将hexo部署到GitHub</h4><p>打开站点配置文件 _config.yml，翻到最后，修改为<br>YourgithubName就是你的GitHub账户</p>
+<pre><code>deploy:
+  type: git
+  repo: https://github.com/YourgithubName/YourgithubName.github.io.git
+  branch: master</code></pre><p>安装deploy-git ，也就是部署的命令,这样才能用命令部署到GitHub</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><p>然后</p>
+<pre><code>hexo clean
+hexo generate
+hexo deploy</code></pre><p>hexo clean 清除了你之前生成的东西，也可以不加。<br>hexo generate 顾名思义，生成静态文章，可以用 hexo g缩写<br>hexo deploy 部署文章，可以用hexo d缩写<br><strong>注意：</strong>deploy时可能要你输入username和password。部署成功后，过一会儿就可以在<a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a> 这个网站看到你的博客了！！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,19 +270,107 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://laiyong.wang/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://laiyong.wang/2020/06/05/hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/", 
+    sourceId: "hexo-搭建个人博客",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -228,8 +393,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
